@@ -53,3 +53,9 @@ footer {
     display: block;
     margin: 0 auto;
 }
+
+#testCanvas {
+    border: 5px solid #333;
+    display: block;
+    margin: 0 auto;
+}

@@ -2,9 +2,9 @@
 const canvas = document.getElementById('networkCanvas');
 const ctx = canvas.getContext('2d');
 
-//Constants
+// Constants
 const node_color = '#B9975B';
-const node_outline = '#000000';
+const outline_color = '#000000';
 const edge_color = '#115740';
 const radius = 7;
 
@@ -35,7 +35,7 @@ function drawNeuralNetwork() {
             ctx.arc(x, y, radius, 0, 2 * Math.PI);
             ctx.fillStyle = node_color;
             ctx.fill();
-            ctx.strokeStyle = node_outline;
+            ctx.strokeStyle = outline_color;
             ctx.stroke();
 
             // Draw connections to next layer

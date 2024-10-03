@@ -8,10 +8,14 @@ const radius = 7;
 
 // Ball Conditions
 let balls = [
-    { x: 50, y: 50, dx: 5, dy: 3, color: '#B9975B'}, // Ball 1
-    { x: canvas.width - 50, y: canvas.height - 50, dx: -3, dy: -5, color: '#115740'}, // Ball 2
-    { x: 50, y: canvas.height - 50, dx: 4, dy: -4, color: '#F0B323'}, // Ball 3
-    { x: canvas.width - 50, y: 50, dx: -4, dy: 4, color: '#D0D3D4'} // Ball 4
+    { x: 20, y: 20, dx: 5, dy: 3, color: '#B9975B'}, // Ball 1
+    { x: 20, y: 40, dx: 6, dy: 4, color: '#115740'}, // Ball 2
+    { x: 20, y: 60, dx: 7, dy: 5, color: '#F0B323'}, // Ball 3
+    { x: 20, y: 80, dx: 8, dy: 6, color: '#D0D3D4'}, // Ball 4
+    { x: 20, y: 100, dx: 8, dy: 6, color: '#00B388'}, // Ball 5
+    { x: 20, y: 120, dx: 7, dy: 5, color: '#84344E'}, // Ball 6
+    { x: 20, y: 140, dx: 6, dy: 4, color: '#E56A54'}, // Ball 7
+    { x: 20, y: 160, dx: 5, dy: 3, color: '#789D4A'} // Ball 8
 ];
 
 // Drawing

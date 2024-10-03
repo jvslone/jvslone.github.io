@@ -26,11 +26,11 @@ nav {
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 25px;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    font-size: large;
+    font-size: x-large;
 }
 
 section {

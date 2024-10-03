@@ -6,6 +6,7 @@ const navbar = `
     <nav>
         <a href="index.html">Home</a>
         <a href="test.html">Test</a>
+        <a href="test2.html">Test 2</a>
     </nav>
 `;
 

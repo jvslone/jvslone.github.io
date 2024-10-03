@@ -46,7 +46,7 @@ function drawNeuralNetwork() {
                     const nextX = nextLayer.x;
                     const nextY = nextYSpacing * (nextNodeIndex + 1);
 
-                    // Draw connections
+                    // Draw Connections
                     ctx.beginPath();
                     ctx.moveTo(x + radius, y);
                     ctx.lineTo(nextX - radius, nextY);

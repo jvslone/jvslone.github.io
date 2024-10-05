@@ -5,7 +5,7 @@ const watermark = "&copy; MIT License.";
 const navbar = `
     <nav>
         <a href="index.html">Home</a>
-        <a href="test.html">Test</a>
+        <a href="test1.html">Test 1</a>
         <a href="test2.html">Test 2</a>
         <a href="test3.html">Test 3</a>
     </nav>

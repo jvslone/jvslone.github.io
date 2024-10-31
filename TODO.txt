@@ -1,0 +1,5 @@
+Add Automatic Mobile Format
+Reactive Button And Formatting
+Interactive Simulations
+Add Some Cool ML/Physics Visualizations
+Add Reinforcement Learning, or Some Bayesian Visualizations

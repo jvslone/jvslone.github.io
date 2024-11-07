@@ -4,10 +4,10 @@ const watermark = "&copy; MIT License.";
 // Define the navigation bar HTML
 const navbar = `
     <nav>
-        <a href="index.html">Home</a>
-        <a href="test1.html">Test 1</a>
-        <a href="test2.html">Neural Transport</a>
-        <a href="test3.html">Test 3</a>
+        <a href="index.html">Homepage</a>
+        <a href="test1.html">Canvas Test</a>
+        <a href="test2.html">FlowNetTK</a>
+        <a href="test3.html">Simulation Test</a>
     </nav>
 `;
 

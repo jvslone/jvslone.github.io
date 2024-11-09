@@ -3,17 +3,19 @@ function startSimulation3() {
   // Canvas Setup
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
-
+  clearCanvas()
   // Clear any existing content
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  resizeCanvas();
-
-  window.addEventListener('resize', resizeCanvas);
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
+  // resizeCanvas();
+
+  //window.addEventListener('resize', resizeCanvas);
+
+  //function resizeCanvas() {
+  //  canvas.width = window.innerWidth;
+  //  canvas.height = window.innerHeight;
+  //}
 
   // Parameters (Easy to tune)
   const params = {
@@ -228,6 +230,7 @@ function startSimulation3() {
 
   // Animation Loop
   function animate() {
+    clearCanvas()
     // Draw a semi-transparent rectangle for fading effect
     ctx.fillStyle = `rgba(255, 255, 255, ${params.fadeAlpha})`; //!MUST MATCH BACKGROUND COLOR
     ctx.fillRect(0, 0, canvas.width, canvas.height);

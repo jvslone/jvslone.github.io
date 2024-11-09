@@ -1,7 +1,7 @@
 // menu_script.js
 
 function loadSimulation(scriptName, startFunctionName) {
-  console.log(`Attempting to load simulation script: ${scriptName}`);
+  console.log(`Attempting to load simulation script: ${scriptName} with start function: ${startFunctionName}`);
 
   // Remove any existing simulation script
   const oldScript = document.getElementById('simulationScript');
@@ -27,6 +27,7 @@ function loadSimulation(scriptName, startFunctionName) {
   newScript.onload = function () {
     console.log(`Loaded script: ${scriptName}`);
     if (typeof window[startFunctionName] === 'function') {
+      console.log(`Starting simulation: ${startFunctionName}`);
       window[startFunctionName]();
     } else {
       console.error(`Function ${startFunctionName} not found in ${scriptName}`);
@@ -40,7 +41,7 @@ function loadSimulation(scriptName, startFunctionName) {
   document.body.appendChild(newScript);
 }
 
-// Load the default simulation when the page loads
+// Load the default simulation when the page loads using addEventListener
 window.addEventListener('load', function () {
-  loadSimulation('test3sim3_script.js', 'startSimulation3'); // Default simulation
+  loadSimulation('test3sim3_script.js', 'startSimulation3'); // Set your default simulation script here
 });

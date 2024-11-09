@@ -3,6 +3,9 @@ function startSimulation3() {
   // Canvas Setup
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
+
+  // Clear any existing content
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   resizeCanvas();
 
   window.addEventListener('resize', resizeCanvas);

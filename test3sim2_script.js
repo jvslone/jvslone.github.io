@@ -1,6 +1,6 @@
 // Plasma MHD Simulation with Reflecting Boundaries and Density Conservation
 
-function startSimulation() {
+function startSimulation2() {
   console.log('Simulation started');
 
   // Get the canvas and context

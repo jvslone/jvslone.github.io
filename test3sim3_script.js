@@ -3,7 +3,6 @@ function startSimulation3() {
   // Canvas Setup
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
-  clearCanvas()
   // Clear any existing content
   function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -23,9 +22,9 @@ function startSimulation3() {
     rows: 4*60,              // Number of rows in the flow field
     noiseScale: 0.005,      // Scale of the Perlin noise
     particleCount: 5000,    // Number of particles
-    particleSpeed: 5,       // Speed of particles
+    particleSpeed: 3,       // Speed of particles
     lineWidth: 1,           // Width of the flow lines
-    fadeAlpha: 0.2,        // Alpha value for fading effect (0 - 1)
+    fadeAlpha: 0.05,        // Alpha value for fading effect (0 - 1)
     perturbRadius: 50,      // Radius for perturbing the field on mouse drag
     perturbStrength: Math.PI / 16, // Maximum angle change when perturbing
   };
@@ -230,7 +229,6 @@ function startSimulation3() {
 
   // Animation Loop
   function animate() {
-    clearCanvas()
     // Draw a semi-transparent rectangle for fading effect
     ctx.fillStyle = `rgba(255, 255, 255, ${params.fadeAlpha})`; //!MUST MATCH BACKGROUND COLOR
     ctx.fillRect(0, 0, canvas.width, canvas.height);

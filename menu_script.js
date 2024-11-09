@@ -43,5 +43,5 @@ function loadSimulation(scriptName, startFunctionName) {
 
 // Load the default simulation when the page loads using addEventListener
 window.addEventListener('load', function () {
-  loadSimulation('test3sim2_script.js', 'startSimulation2'); // Set your default simulation script here
+  loadSimulation('test3sim3_script.js', 'startSimulation3'); // Set your default simulation script here
 });

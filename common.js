@@ -21,14 +21,14 @@ function insertWatermark() {
 
 // Function to insert the navigation bar
 function insertNavbar() {
-    const body = document.querySelector('header');
-    if (body) {
-        body.insertAdjacentHTML('afterend', navbar);
+    const header = document.querySelector('header');
+    if (header) {
+        header.insertAdjacentHTML('afterend', navbar);
     }
 }
 
-// Run the functions on page load
-window.onload = function() {
+// Run the functions on page load using addEventListener
+window.addEventListener('load', function() {
     insertNavbar();
     insertWatermark();
-};
+});

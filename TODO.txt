@@ -3,3 +3,9 @@ Reactive Button And Formatting
 Interactive Simulations
 Add Some Cool ML/Physics Visualizations
 Add Reinforcement Learning, or Some Bayesian Visualizations
+Add Tokomak Plasma Animation Coming Towards You
+
+
+
+(Flow Field Symmetry, smooth perturbign)
+drag drop menu, E+B flow simulation

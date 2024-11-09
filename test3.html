@@ -12,14 +12,23 @@
         <h1>Simulation Test</h1>
     </header>
 
-    <section>
-        <h2>Bouncing Ball Simulation</h2>
-        <canvas id="testCanvas" width="800" height="500"></canvas>
-    </section>
+    <div class="simulation-container">
+        <div id="simulationMenu">
+            <button onclick="loadSimulation('test3sim1_script.js')">Bouncing Balls</button>
+            <button onclick="loadSimulation('test3sim2_script.js')">Fluid Simulation</button>
+            <button onclick="loadSimulation('test3sim3_script.js')">Flow Fields</button>
+            <!-- Add more buttons as needed -->
+        </div>
+    
+        <section>
+            <canvas id="testCanvas" width="800" height="600"></canvas>
+        </section>
+    </div>
 
     <footer></footer>
 
     <script src="common.js"></script>
-    <script src="test3_script.js"></script>
+    <script src="menu_script.js"></script>
+    <!-- <script src="test3sim3_script.js"></script> -->
 </body>
 </html>

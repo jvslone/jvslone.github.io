@@ -7,5 +7,6 @@ Add Tokomak Plasma Animation Coming Towards You
 
 
 
-(Flow Field Symmetry, smooth perturbign)
+(Flow Field Symmetry, smooth perturbing)
 drag drop menu, E+B flow simulation
+Fix green ball dissapearing

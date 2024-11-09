@@ -249,6 +249,7 @@ function startSimulation2() {
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
 
+  const numParticles = 5000
   // Clear any existing content
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -256,7 +257,7 @@ function startSimulation2() {
   let particles = [];
 
   function createParticles() {
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < numParticles; i++) {
           particles.push({
               x: Math.random() * canvas.width,
               y: Math.random() * canvas.height,

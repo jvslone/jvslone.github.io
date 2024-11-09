@@ -22,7 +22,7 @@ function startSimulation3() {
     cols: 4*80,              // Number of columns in the flow field
     rows: 4*60,              // Number of rows in the flow field
     noiseScale: 0.005,      // Scale of the Perlin noise
-    particleCount: 10000,    // Number of particles
+    particleCount: 5000,    // Number of particles
     particleSpeed: 5,       // Speed of particles
     lineWidth: 1,           // Width of the flow lines
     fadeAlpha: 0.2,        // Alpha value for fading effect (0 - 1)

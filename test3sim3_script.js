@@ -14,13 +14,13 @@ function startSimulation3() {
 
   // Parameters (Easy to tune)
   const params = {
-    cols: 100,              // Number of columns in the flow field
-    rows: 100,              // Number of rows in the flow field
+    cols: 4*80,              // Number of columns in the flow field
+    rows: 4*60,              // Number of rows in the flow field
     noiseScale: 0.005,      // Scale of the Perlin noise
-    particleCount: 5000,    // Number of particles
-    particleSpeed: 3,       // Speed of particles
+    particleCount: 10000,    // Number of particles
+    particleSpeed: 5,       // Speed of particles
     lineWidth: 1,           // Width of the flow lines
-    fadeAlpha: 0.08,        // Alpha value for fading effect (0 - 1)
+    fadeAlpha: 0.2,        // Alpha value for fading effect (0 - 1)
     perturbRadius: 50,      // Radius for perturbing the field on mouse drag
     perturbStrength: Math.PI / 16, // Maximum angle change when perturbing
   };

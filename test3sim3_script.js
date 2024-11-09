@@ -231,7 +231,7 @@ function startSimulation3() {
     // Animation Loop
     function animate() {
       // Draw a semi-transparent rectangle for fading effect
-      ctx.fillStyle = `rgba(0, 0, 0, ${params.fadeAlpha})`; //!MUST MATCH BACKGROUND COLOR
+      ctx.fillStyle = `rgba(255, 255, 255, ${params.fadeAlpha})`; //!MUST MATCH BACKGROUND COLOR
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Optionally, set stroke style based on noise or other factors for colorful effects
@@ -247,9 +247,11 @@ function startSimulation3() {
     }
 
     // Initialize canvas with white background
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     animate();
   });
 }
+
+// startSimulation3()

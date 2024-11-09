@@ -42,5 +42,5 @@ function loadSimulation(scriptName, startFunctionName) {
 
 // Load the default simulation when the page loads
 window.addEventListener('load', function () {
-  loadSimulation('test3sim1_script.js', 'startBouncingBallsSimulation'); // Default simulation
+  loadSimulation('test3sim3_script.js', 'startSimulation3'); // Default simulation
 });

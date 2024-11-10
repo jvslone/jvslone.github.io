@@ -139,10 +139,14 @@ function startSimulation3() {
         this.y += vector.y * this.speed;
 
         // Wrap around edges
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        // if (this.x < 0) this.x = canvas.width;
+        // if (this.x > canvas.width) this.x = 0;
+        // if (this.y < 0) this.y = canvas.height;
+        // if (this.y > canvas.height) this.y = 0;
+        if (this.x < 0) this.reset();
+        if (this.x > canvas.width) this.reset();
+        if (this.y < 0) this.reset();
+        if (this.y > canvas.height) this.reset();
       } else {
         this.reset();
       }

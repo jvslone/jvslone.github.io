@@ -29,7 +29,7 @@ function startSimulation2() {
           // Draw the particle
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `hsl(${100 + 100*Math.sign(particle.dx)}, 100%, 50%)`;
+          ctx.fillStyle = `hsl(${100 + 100*Math.sign(particle.dx)*(Math.sign(particle.dy))}, 100%, 50%)`;
           ctx.fill();
           ctx.closePath();
 

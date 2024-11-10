@@ -25,8 +25,8 @@ function startSimulation3() {
     particleSpeed: 6,       // Speed of particles
     lineWidth: 1.25,           // Width of the flow lines
     fadeAlpha: 0.02,        // Alpha value for fading effect (0 - 1)
-    perturbRadius: 50,      // Radius for perturbing the field on mouse drag
-    perturbStrength: Math.PI / 16, // Maximum angle change when perturbing
+    perturbRadius: 100,      // Radius for perturbing the field on mouse drag
+    perturbStrength: Math.PI/32 , // Maximum angle change when perturbing
   };
 
   // Utility: Perlin Noise Implementation
@@ -177,6 +177,20 @@ function startSimulation3() {
     particles.push(new Particle());
   }
 
+
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function perturbWithDelay(mouseX, mouseY, times, waitTime) {
+    for (let i = 0; i < times; i++) {
+      perturbField(mouseX, mouseY);
+      await delay(waitTime);
+    }
+  }
+  
+
+
   // Visual Effects Setup
   ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
   ctx.lineWidth = params.lineWidth;
@@ -191,7 +205,8 @@ function startSimulation3() {
     const rect = canvas.getBoundingClientRect();
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
-    perturbField(mouseX, mouseY);
+    // Example: Call perturbField 12 times with a 100ms delay between each
+  perturbWithDelay(mouseX, mouseY, 24, 25);
   });
 
   canvas.addEventListener('mousemove', (e) => {
@@ -199,7 +214,7 @@ function startSimulation3() {
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-      perturbField(mouseX, mouseY);
+      //perturbField(mouseX, mouseY);
     }
   });
 
@@ -219,17 +234,40 @@ function startSimulation3() {
         const dx = cellX - x;
         const dy = cellY - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
+        
         if (distance < params.perturbRadius) {
           const index = col + row * fieldCols;
-          const angle = Math.atan2(dy, dx) + (Math.random() - 0.5) * params.perturbStrength;
+          const currentVector = field[index];
+          const theta = Math.atan2(currentVector.y, currentVector.x); // Current angle of the vector
+  
+          // Determine the perpendicular direction
+          // We'll rotate vectors to the left or right based on their position relative to the mouse
+          // Compute the angle from the perturbation center to the cell
+          const angleToCell = Math.atan2(dy, dx);
+          
+          // Determine on which side the cell is relative to the flow direction
+          // Compute the dot product between the flow vector and the vector from center to cell
+          const flowDotPosition = currentVector.x * (dx / distance) + currentVector.y * (dy / distance);
+          
+          // If the dot product is positive, rotate one way; if negative, rotate the other way
+          const rotateDirection = flowDotPosition >= 0 ? 1 : -1;
+          
+          // Compute the rotation magnitude based on distance (closer cells get more rotation)
+          const rotationMagnitude = rotateDirection * params.perturbStrength * (1 - distance / params.perturbRadius);
+          
+          // Compute the new angle by adding the rotation magnitude
+          const newTheta = theta + rotationMagnitude;
+          
+          // Update the vector
           field[index] = {
-            x: Math.cos(angle),
-            y: Math.sin(angle),
+            x: Math.cos(newTheta),
+            y: Math.sin(newTheta),
           };
         }
       }
     }
   }
+  
 
   // Animation Loop
   function animate() {

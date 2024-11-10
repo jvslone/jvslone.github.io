@@ -7,19 +7,11 @@ function startSimulation3() {
   function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
-  // resizeCanvas();
+
   const lines = []; // Array to store all drawn lines
   const maxLines = 8000; // Maximum number of lines to keep
 
-
-  //window.addEventListener('resize', resizeCanvas);
-
-  //function resizeCanvas() {
-  //  canvas.width = window.innerWidth;
-  //  canvas.height = window.innerHeight;
-  //}
-
-  // Parameters (Easy to tune)
+  // Parameters
   const params = {
     cols: 5*80,              // Number of columns in the flow field
     rows: 5*60,              // Number of rows in the flow field
@@ -27,11 +19,11 @@ function startSimulation3() {
     particleCount: 8000,    // Number of particles
     particleSpeed: 8,       // Speed of particles
     lineWidth: 2.25,           // Width of the flow lines
-    fadeAlpha: 0.075,        // Alpha value for fading effect (0 - 1)
+    fadeAlpha: 0.04,        // Alpha value for fading effect (0 - 1)
     perturbRadius: 100,      // Radius for perturbing the field on mouse drag
     perturbStrength: Math.PI/32, // Maximum angle change when perturbing
-    fadeStartAge: 1000,      // Time in ms before fading starts (1 second)
-    maxLineAge: 5000
+    fadeStartAge: 2500,      // Time in ms before fading starts (1 second)
+    maxLineAge: 10000
   };
 
   

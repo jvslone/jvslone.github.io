@@ -2,7 +2,7 @@ function startSimulation2() {
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
 
-  const numParticles = 7500
+  const numParticles = 5000
   // Clear any existing content
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -14,8 +14,8 @@ function startSimulation2() {
           particles.push({
               x: Math.random() * canvas.width,
               y: Math.random() * canvas.height,
-              dx: (Math.random() - 0.5) * 2,
-              dy: (Math.random() - 0.5) * 2,
+              dx: (Math.random() - 0.5) * 5,
+              dy: (Math.random() - 0.5) * 5,
               radius: 1.5,
           });
       }
@@ -43,6 +43,16 @@ function startSimulation2() {
           if (particle.y + particle.radius > canvas.height || particle.y - particle.radius < 0) {
               particle.dy = -particle.dy;
           }
+          else {
+            if (Math.random() < numParticles/50000) {
+              particle.dx = (Math.random() - 0.5) * 5;
+              particle.dy = (Math.random() - 0.5) * 5;
+            }
+            if (Math.random() < numParticles/250000) {
+              particle.dx = (Math.random() - 0.5) * 7.5;
+              particle.dy = (Math.random() - 0.5) * 7.5;
+            }
+          }
       });
 
       requestAnimationFrame(animate);
@@ -50,7 +60,7 @@ function startSimulation2() {
 
   createParticles();
   animate();
-  console.log("Fluid Simulation started.");
+  console.log("Simulation started.");
 }
 
 startSimulation2();

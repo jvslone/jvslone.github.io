@@ -7,19 +7,20 @@ function startSimulation1() {
     const outline_color = '#000000';
     const timeStep = 1; // Adjust as needed for performance and accuracy
     const EPSILON = 1e-6; // Small value to prevent floating-point issues
+    
 
     // Ball Conditions
     let balls = [
-        { x: 100, y: 100, dx: 5, dy: 3, mass: 2, color: '#B9975B' }, // Ball 1
-        { x: 150, y: 120, dx: -4, dy: 2, mass: 4, color: '#115740' }, // Ball 2
-        { x: 200, y: 140, dx: 3, dy: -5, mass: 6, color: '#F0B323' }, // Ball 3
-        { x: 250, y: 160, dx: -6, dy: 4, mass: 8, color: '#D0D3D4' }, // Ball 4
-        { x: 300, y: 180, dx: 2, dy: -3, mass: 10, color: '#00B388' }, // Ball 5
-        { x: 350, y: 200, dx: -5, dy: 3, mass: 12, color: '#84344E' }, // Ball 6
-        { x: 400, y: 220, dx: 4, dy: -2, mass: 12, color: '#E56A54' }, // Ball 7
-        { x: 450, y: 240, dx: -5, dy: 3, mass: 10, color: '#789D4A' }, // Ball 8
-        { x: 500, y: 260, dx: 4, dy: -2, mass: 8, color: '#D83FBA' }, // Ball 9
-        { x: 550, y: 280, dx: -4, dy: 2, mass: 6, color: '#3FCCD8' } // Ball 10
+        { x: 100, y: 100, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#B9975B' }, // Ball 1
+        { x: 150, y: 120, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#115740' }, // Ball 2
+        { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' }, // Ball 3
+        { x: 250, y: 160, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D0D3D4' }, // Ball 4
+        { x: 300, y: 180, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#00B388' }, // Ball 5
+        { x: 350, y: 200, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#84344E' }, // Ball 6
+        { x: 400, y: 220, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#E56A54' }, // Ball 7
+        { x: 450, y: 240, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#789D4A' }, // Ball 8
+        { x: 500, y: 260, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D83FBA' }, // Ball 9
+        { x: 550, y: 280, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#3FCCD8' } // Ball 10
     ];
 
     // Calculate radius based on mass (assuming uniform density)

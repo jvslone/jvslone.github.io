@@ -2,7 +2,7 @@ function startSimulation2() {
   const canvas = document.getElementById('testCanvas');
   const ctx = canvas.getContext('2d');
 
-  const numParticles = 5000
+  const numParticles = 7500
   // Clear any existing content
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -16,8 +16,7 @@ function startSimulation2() {
               y: Math.random() * canvas.height,
               dx: (Math.random() - 0.5) * 2,
               dy: (Math.random() - 0.5) * 2,
-              radius: 2,
-              color: 'blue'
+              radius: 1.5,
           });
       }
   }

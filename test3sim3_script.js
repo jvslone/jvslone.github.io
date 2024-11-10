@@ -18,13 +18,13 @@ function startSimulation3() {
 
   // Parameters (Easy to tune)
   const params = {
-    cols: 4*80,              // Number of columns in the flow field
-    rows: 4*60,              // Number of rows in the flow field
+    cols: 5*80,              // Number of columns in the flow field
+    rows: 5*60,              // Number of rows in the flow field
     noiseScale: 0.005,      // Scale of the Perlin noise
-    particleCount: 10000,    // Number of particles
-    particleSpeed: 4,       // Speed of particles
-    lineWidth: 1,           // Width of the flow lines
-    fadeAlpha: 0.025,        // Alpha value for fading effect (0 - 1)
+    particleCount: 8000,    // Number of particles
+    particleSpeed: 6,       // Speed of particles
+    lineWidth: 1.25,           // Width of the flow lines
+    fadeAlpha: 0.02,        // Alpha value for fading effect (0 - 1)
     perturbRadius: 50,      // Radius for perturbing the field on mouse drag
     perturbStrength: Math.PI / 16, // Maximum angle change when perturbing
   };
@@ -124,7 +124,7 @@ function startSimulation3() {
       this.y = Math.random() * canvas.height;
       this.prevX = this.x;
       this.prevY = this.y;
-      this.speed = params.particleSpeed * (0.5 + Math.random() * 0.5);
+      this.speed = params.particleSpeed * (0.15 + Math.random() * 0.85);
     }
 
     update() {

@@ -254,4 +254,4 @@ function startSimulation3() {
 }
 
 // // Uncomment the following line if you want the simulation to start automatically without menu_script.js
-// startSimulation3();
+startSimulation3();

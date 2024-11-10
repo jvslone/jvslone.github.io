@@ -300,3 +300,5 @@ function startSimulation2() {
   animate();
   console.log("Fluid Simulation started.");
 }
+
+startSimulation2();

@@ -7,7 +7,7 @@ const navbar = `
         <a href="index.html">Homepage</a>
         <a href="test1.html">Canvas Test</a>
         <a href="test2.html">FlowNetTK</a>
-        <a href="test3.html">Simulation Test</a>
+        <a href="test3sim3.html">Simulation Test</a>
     </nav>
 `;
 

@@ -276,3 +276,5 @@ function startSimulation1() {
 
     animate();
 }
+
+startSimulation1();

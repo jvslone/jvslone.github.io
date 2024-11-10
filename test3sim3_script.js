@@ -8,6 +8,9 @@ function startSimulation3() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
   // resizeCanvas();
+  const lines = []; // Array to store all drawn lines
+  const maxLines = 8000; // Maximum number of lines to keep
+
 
   //window.addEventListener('resize', resizeCanvas);
 
@@ -22,13 +25,16 @@ function startSimulation3() {
     rows: 5*60,              // Number of rows in the flow field
     noiseScale: 0.005,      // Scale of the Perlin noise
     particleCount: 8000,    // Number of particles
-    particleSpeed: 6,       // Speed of particles
-    lineWidth: 1.25,           // Width of the flow lines
-    fadeAlpha: 0.02,        // Alpha value for fading effect (0 - 1)
+    particleSpeed: 8,       // Speed of particles
+    lineWidth: 2.25,           // Width of the flow lines
+    fadeAlpha: 0.075,        // Alpha value for fading effect (0 - 1)
     perturbRadius: 100,      // Radius for perturbing the field on mouse drag
-    perturbStrength: Math.PI/32 , // Maximum angle change when perturbing
+    perturbStrength: Math.PI/32, // Maximum angle change when perturbing
+    fadeStartAge: 1000,      // Time in ms before fading starts (1 second)
+    maxLineAge: 5000
   };
 
+  
   // Utility: Perlin Noise Implementation
   // Using a simple implementation; for better performance and quality, consider using a library like simplex-noise.js
   class PerlinNoise {
@@ -152,22 +158,27 @@ function startSimulation3() {
       }
     }
 
-    draw(ctx) {
+    draw(currentTime) {
       const angle = Math.atan2(this.y - this.prevY, this.x - this.prevX);
       const hue = (angle * 180 / Math.PI) % 360; // Convert angle to degrees
-      ctx.strokeStyle = `hsl(${hue + 15*Math.random()}, 100%, 50%)`;
-      
-      // Calculate distance between previous and current positions
-      const dx = this.x - this.prevX;
-      const dy = this.y - this.prevY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDistance = 100; // Threshold to prevent drawing long lines from wrap-around
-      
-      if (distance < maxDistance) { // Only draw if the distance is reasonable
-        ctx.beginPath();
-        ctx.moveTo(this.prevX, this.prevY);
-        ctx.lineTo(this.x, this.y);
-        ctx.stroke();
+      const randomizedHue = hue + 8.5 * Math.random();
+  
+      // Create a new line object
+      const line = {
+        x1: this.prevX,
+        y1: this.prevY,
+        x2: this.x,
+        y2: this.y,
+        hue: randomizedHue,
+        creationTime: currentTime
+      };
+  
+      // Add the line to the lines array
+      lines.push(line);
+  
+      // Ensure the lines array doesn't exceed the maximum size
+      if (lines.length > maxLines) {
+        lines.shift(); // Remove the oldest line
       }
     }
   }
@@ -192,7 +203,6 @@ function startSimulation3() {
 
 
   // Visual Effects Setup
-  ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
   ctx.lineWidth = params.lineWidth;
 
   // Handle Mouse Interaction for Perturbation
@@ -270,23 +280,57 @@ function startSimulation3() {
   
 
   // Animation Loop
-  function animate() {
-    // Draw a semi-transparent rectangle for fading effect
-
-    ctx.fillStyle = `rgba(255, 255, 255, ${params.fadeAlpha})`; //!MUST MATCH BACKGROUND COLOR
+  function animate(currentTime) {
+    ctx.fillStyle = `rgba(255, 255, 255, ${params.fadeAlpha})`; // Adjust alpha for desired fade speed
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Optionally, set stroke style based on noise or other factors for colorful effects
-    ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
-
-    // Update and draw particles
+    // Optionally, clear the entire canvas if needed
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Alternatively, fill with a solid background color
+    //ctx.fillStyle = 'white';
+    //ctx.fillRect(0, 0, canvas.width, canvas.height);
+  
+    // Update and draw particles, creating lines
     particles.forEach((p) => {
       p.update();
-      p.draw(ctx);
+      p.draw(currentTime);
     });
+  
+    // Iterate over the lines array and draw them
+    for (let i = lines.length - 1; i >= 0; i--) {
+      const line = lines[i];
+      const age = currentTime - line.creationTime;
+  
+      if (age > params.maxLineAge) { // 2000 milliseconds = 2 seconds
+        // Remove the line from the array
+        lines.splice(i, 1);
+        continue;
+      }
+  
+      // Calculate opacity based on age
+      let opacity;
+      if (age < params.fadeStartAge) {
+        opacity = 1; // Fully opaque
+      } else {
+        // Calculate opacity between 1 and 0 based on age
+        opacity = 1 - ((age - params.fadeStartAge) / (params.maxLineAge - params.fadeStartAge));
+        opacity = Math.max(opacity, 0); // Ensure opacity doesn't go below 0
+      }
 
+  
+      // Set stroke style with the calculated opacity
+      ctx.strokeStyle = `hsla(${line.hue}, 100%, 50%, ${opacity})`;
+      ctx.lineWidth = params.lineWidth;
+  
+      // Draw the line
+      ctx.beginPath();
+      ctx.moveTo(line.x1, line.y1);
+      ctx.lineTo(line.x2, line.y2);
+      ctx.stroke();
+    }
+  
     requestAnimationFrame(animate);
   }
+  
 
   // Initialize canvas with white background
   ctx.fillStyle = 'white';

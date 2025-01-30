@@ -10,18 +10,24 @@ function startSimulation1() {
     
 
     // Ball Conditions
+    // let balls = [
+    //     { x: 100, y: 100, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#B9975B' }, // Ball 1
+    //     { x: 150, y: 120, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#115740' }, // Ball 2
+    //     { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' }, // Ball 3
+    //     { x: 250, y: 160, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D0D3D4' }, // Ball 4
+    //     { x: 300, y: 180, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#00B388' }, // Ball 5
+    //     { x: 350, y: 200, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#84344E' }, // Ball 6
+    //     { x: 400, y: 220, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#E56A54' }, // Ball 7
+    //     { x: 450, y: 240, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#789D4A' }, // Ball 8
+    //     { x: 500, y: 260, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D83FBA' }, // Ball 9
+    //     { x: 550, y: 280, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#3FCCD8' } // Ball 10
+    // ];
     let balls = [
         { x: 100, y: 100, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#B9975B' }, // Ball 1
         { x: 150, y: 120, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#115740' }, // Ball 2
-        { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' }, // Ball 3
-        { x: 250, y: 160, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D0D3D4' }, // Ball 4
-        { x: 300, y: 180, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#00B388' }, // Ball 5
-        { x: 350, y: 200, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#84344E' }, // Ball 6
-        { x: 400, y: 220, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#E56A54' }, // Ball 7
-        { x: 450, y: 240, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#789D4A' }, // Ball 8
-        { x: 500, y: 260, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D83FBA' }, // Ball 9
-        { x: 550, y: 280, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#3FCCD8' } // Ball 10
+        { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' } // Ball 3
     ];
+
 
     // Calculate radius based on mass (assuming uniform density)
     function calculateRadius(mass) {

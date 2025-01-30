@@ -25,7 +25,9 @@ function startSimulation1() {
     let balls = [
         { x: 100, y: 100, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#B9975B' }, // Ball 1
         { x: 150, y: 120, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#115740' }, // Ball 2
-        { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' } // Ball 3
+        { x: 200, y: 140, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#F0B323' }, // Ball 3
+        { x: 250, y: 160, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#D0D3D4' }, // Ball 4
+        { x: 300, y: 180, dx: 20*(Math.random() - 0.5), dy: 20*(Math.random() - 0.5), mass: 1 + 10*Math.random(), color: '#00B388' }, // Ball 5
     ];
 
 

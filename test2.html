@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <!-- <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FlowNetTK_projectpage</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
 </head>
-<body>
-    <header>
-        <h1>FlowNetTK</h1>
-    </header>
-
-    <section>
-        <img src="images/FlowNetTK_Logo.png" alt="Project Logo" width="350">
-        <h2>APS Poster</h2>
-        <a href="docs/APS DPP Poster Jim Slone WM.pdf" target="_blank">APS DPP Poster(PDF)</a>
-        <h2>PhysicsFest Slides</h2>
-        <a href="docs/PhysicsFest 2024 Slides Slone.pdf" target="_blank">PhysicsFest 2024 Slides(PDF)</a>
-        <h2>NURVa Poster</h2>
-        <a href="docs/NURVa Poster Slone.pdf" target="_blank">NURVa 2024 Poster Draft(PDF)</a>
-        <h2>Technical Notes</h2>
-        <p>Coming Soon</p>
-        <h2>Package Source Code</h2>
-        <p>Coming Soon</p>
-    </section>
-
-    <footer></footer>
-
-    <script src="common.js"></script>
+<body class="background">
+    <div class="layout">
+        <div class='floating_buttons'>
+                <a href='test1.html'><button class="arc_button button_1">BIO</button></a>
+                <a href='index.html'><button class="arc_button button_2 button_home">HOME</button></a>
+                <a href='test3.html'><button class="arc_button button_3">SIMS</button></a>
+                <a href='test4.html'><button class="arc_button button_4">TA</button></a>
+                <a href='test5.html'><button class="arc_button button_5">WORK</button></a>
+        </div>
+        <div class="topbar">
+            <div id="logits-readout" class="logits-readout">
+            </div>
+        </div>
+        <div class="stage">
+            <canvas id="drawing_canvas"></canvas>
+            <div class="prediction-panel">
+                <button id="undo-button">Undo</button>
+                <button id="redo-button">Redo</button>
+                <h2 id="prediction-output">Draw a bird, cat, fish, horse, or rabbit!</h2>
+            </div>
+        </div>
+        <div class="bottombar">
+            <p class="bottom-instructions">
+                Try drawing one of the animals above and the CNN will try to classify it.
+                Use <span class="kbd">Ctrl</span> + <span class="kbd">Z</span> to undo.
+            </p>
+        </div>
+    </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="script2.js"></script>
 </html>

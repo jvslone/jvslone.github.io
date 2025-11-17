@@ -1,0 +1,243 @@
+/* ######################################## General ########################################*/
+
+
+.background {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(229, 226, 226);
+    width: 100vw;
+}
+
+
+.hello_msg {
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    color: #115740;
+    font-size: 7vmax;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sub_hello_txt {
+    text-align: center;
+    font-family: "Century Gothic", sans-serif;
+    color: #B9975B;
+    font-size: 2vmax;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.centered_div {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.floating_buttons {
+    position: fixed;
+    background: #0b3828 50%;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 100vh;
+    border-right: #B9975B solid 10px;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arc_button {
+    position: absolute;
+    background: #115740;
+    color: white;
+    border: rgb(222, 222, 222) 0.5vmax solid;
+    border-radius: 50%;
+    width: 7vmax;
+    height: 7vmax;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 1.5vmax;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arc_button:hover {
+    transform: translate(-50%, -50%), scale(1.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button_1 {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_2 {
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_4 {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_5 {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button_home {
+    background: #115740;
+    border: #debe6d 0.75vmax solid;
+    width: 8vmax;
+    height: 8vmax;
+    border-radius: 50%;
+}
+
+/* ######################################## Desktop ########################################*/
+
+
+/* Initially hide desktop-specific elements */
+
+
+/* ######################################## Mobile ########################################*/
+
+
+/* Initially hide mobile-specific elements */
+
+
+/* ######################################## Utility ########################################*/
+
+
+.only_mobile {
+    display: none;
+}
+
+.only_desktop {
+    display: block;
+}
+
+@media (max-height: 768px) {
+    /* Mobile Landscape */
+
+    .button_1 {
+        width: 6vmax;
+        height: 6vmax;
+        font-size: 1.3vmax;
+    }
+
+    .button_2 {
+        width: 6vmax;
+        height: 6vmax;
+        font-size: 1.3vmax;
+    }
+
+    .button_3 {
+        width: 6vmax;
+        height: 6vmax;
+        font-size: 1.3vmax;
+    }
+
+    .button_4 {
+        width: 6vmax;
+        height: 6vmax;
+        font-size: 1.3vmax;
+    }
+
+    .button_5 {
+        width: 6vmax;
+        height: 6vmax;
+           font-size: 1.3vmax;
+    }
+
+    .button_home {
+        border: #debe6d 0.6vmax solid;
+        width: 6.5vmax;
+        height: 6.5vmax;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Mobile Portrait */
+    .only_mobile {
+        display: block;
+    }
+
+    .only_desktop {
+        display: none;
+    }
+
+    .centered_div {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .floating_buttons {
+        top: 80vh;
+        left: 0;
+        width: 100vw;
+        height: 20vh;
+        pointer-events: none;
+        z-index: 10;
+        border-right: None;
+        border-top: #B9975B solid 10px;
+    }
+
+    .button_1 {
+        top: 45%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button_2 {
+        top: 45%;
+        left: 32.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button_3 {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button_4 {
+        top: 45%;
+        left: 67.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .button_5 {
+        top: 45%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hello_msg {
+        font-size: 7vmax;
+    }
+
+    .sub_hello_txt {
+        font-size: 2vmax;
+    }
+}
